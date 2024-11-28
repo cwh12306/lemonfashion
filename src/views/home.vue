@@ -3,14 +3,13 @@
     <nav-bar :menu-open="menuOpen" @menu-toggle="handleMenuToggle" />
     <div id="carousel">
       <el-carousel
+        arrow="always"
         ref="carousel"
         @change="handleCarouselChange"
         indicator-position="none"
         :interval="4000"
         :type="isMobile ? '' : 'card'"
         height="400px"
-        @touchstart="handleTouchStart"
-        @touchend="handleTouchEnd"
       >
         <el-carousel-item
           v-for="(item, index) in images[currentCategory]"
@@ -181,22 +180,6 @@ export default {
       });
 
       this.images = { camiseta, vestidos };
-    },
-    handleTouchStart(event) {
-      this.startX = event.touches[0].clientX;
-    },
-    handleTouchEnd(event) {
-      this.endX = event.changedTouches[0].clientX;
-      const distance = this.startX - this.endX;
-      const threshold = 50; // 滑动距离阈值
-
-      if (distance > threshold) {
-        // 向右滑动，切换到下一张
-        this.$refs.carousel.next();
-      } else if (distance < -threshold) {
-        // 向左滑动，切换到上一张
-        this.$refs.carousel.prev();
-      }
     },
   },
 };
