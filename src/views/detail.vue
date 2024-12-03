@@ -156,13 +156,9 @@ export default {
 }
 .detail-content-contact {
   display: flex;
-  margin-top: 50px;
+  margin-top: 20px;
   padding: 10px;
   font-weight: bold;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0px;
 }
 .detail-content-contact div {
   width: 33%;
