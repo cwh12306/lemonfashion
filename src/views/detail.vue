@@ -125,7 +125,7 @@ export default {
 .detail-container {
   background-color: #f8f8f8;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
 }
 .detail-content {
