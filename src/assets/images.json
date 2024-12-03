@@ -1,6 +1,50 @@
 {
-    "img1": {
-        "color": "red",
-        "size": "xl"
+    "HL30462": {
+        "isSquare": true,
+        "colors": [
+            "BLACK",
+            "WHITE",
+            "PINK",
+            "YELLOW"
+        ],
+        "sizes": {
+            "S/M": [
+                2,
+                2,
+                1,
+                1
+            ],
+            "L/XL": [
+                2,
+                2,
+                1,
+                1
+            ]
+        },
+        "QTY": "12 PCS"
+    },
+    "HL30470": {
+        "isSquare": false,
+        "colors": [
+            "BLACK/WHITE",
+            "APRICOT/BLACK",
+            "PINK/WHITE",
+            "BEIGE/WHITE"
+        ],
+        "sizes": {
+            "S/M": [
+                2,
+                2,
+                1,
+                1
+            ],
+            "L/XL": [
+                2,
+                2,
+                1,
+                1
+            ]
+        },
+        "QTY": "12 PCS"
     }
 }

@@ -35,7 +35,18 @@
         />
       </div>
       <div class="navbar-tel" :style="isHome ? 'color: #fff' : ''">
-        <span>tel:xxxxx</span>
+        <div v-if="!isMobile" class="navbar-contact">
+          <div style="text-align: left">tel: +34 <br />673233504</div>
+          <div style="text-align: center">
+            WhatsApp <br /><img
+              :width="50"
+              :height="50"
+              :src="whatsapp"
+              alt=""
+            />
+          </div>
+          <div style="text-align: right">wechat <br />15058754830</div>
+        </div>
       </div>
     </div>
     <div ref="menuModalContainer" class="menu-modal-container">
@@ -48,12 +59,15 @@
         :key="index"
         class="menu-modal-container-item"
       >
-        <img
-          :width="60"
-          :height="60"
-          :src="images[category][0].src"
-          :alt="category"
-        />
+        <div style="width: 60; height: 60">
+          <img
+            :width="60"
+            :height="60"
+            :src="images[category][0].src"
+            :alt="category"
+            style="object-fit: cover"
+          />
+        </div>
         <div class="menu-modal-container-item-title">
           <span>{{ category }}</span>
           <span class="menu-modal-container-item-title-arrow">
@@ -70,6 +84,7 @@
 
 <script>
 import logo from "@/assets/logo.png";
+import whatsapp from "@/assets/whatsapp.jpg";
 
 export default {
   name: "NavBar",
@@ -79,6 +94,7 @@ export default {
   },
   data() {
     return {
+      whatsapp,
       isHome: false,
       isMobile: false,
       logo,
@@ -202,5 +218,11 @@ export default {
   top: 18px;
   font-size: 18px;
   font-weight: bold;
+}
+.navbar-contact {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  top: -15px;
 }
 </style>

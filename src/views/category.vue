@@ -10,8 +10,8 @@
       >
         <div style="font-size: 12px; font-weight: bold">{{ image.title }}</div>
         <img
-          :width="isMobile ? 150 : 200"
-          :height="isMobile ? 200 : 300"
+          :width="isMobile ? (image.isSquare ? 150 : 150) : (image.isSquare ? 200 : 200)"
+          :height="isMobile ? (image.isSquare ? 150 : 200) : (image.isSquare ? 200 : 300)"
           :src="image.src"
           :alt="image.title"
         />
@@ -57,36 +57,6 @@ export default {
     handleMenuChange(category) {
       if (category) this.currentCategory = category;
     },
-    // loadImages() {
-    //   const contextCamiseta = require.context(
-    //     "@/assets/camiseta",
-    //     true,
-    //     /\.jpg$/
-    //   );
-    //   const contextVestidos = require.context(
-    //     "@/assets/vestidos",
-    //     true,
-    //     /\.jpg$/
-    //   );
-
-    //   const camiseta = contextCamiseta.keys().map((key) => {
-    //     const fileName = key.split("/").pop().replace(".jpg", "");
-    //     return {
-    //       title: fileName,
-    //       src: contextCamiseta(key),
-    //     };
-    //   });
-
-    //   const vestidos = contextVestidos.keys().map((key) => {
-    //     const fileName = key.split("/").pop().replace(".jpg", "");
-    //     return {
-    //       title: fileName,
-    //       src: contextVestidos(key),
-    //     };
-    //   });
-
-    //   this.images = { camiseta, vestidos };
-    // },
     loadImages() {
       const contextCamiseta = require.context(
         "@/assets/camiseta",

@@ -19,8 +19,8 @@
 
 <script>
 import NavBar from "@/components/navbar.vue";
-import camisetaCover from "@/assets/camiseta/img1.jpg";
-import vestidosCover from "@/assets/vestidos/img10.jpg";
+import camisetaCover from "@/assets/camiseta/HL30462.jpg";
+import vestidosCover from "@/assets/vestidos/HL30470.jpg";
 
 export default {
   name: "HomeCom",
